@@ -5,5 +5,11 @@
  */
 public class RulesEngine
 {
-
+    /**
+     * To Do
+     * @return
+     */
+    public String determineWinner(String humanChoice, String computerChoice){
+        return "";
+    }
 }

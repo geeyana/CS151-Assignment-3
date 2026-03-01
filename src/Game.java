@@ -1,12 +1,17 @@
 /**
  * Must Implement Cohesion
  * @author _________
- * May implement Delegation if needed (Game to RulesEngine) - To Be Discussed
+ * Must implement Delegation if needed (Game to RulesEngine)
  */
 public class Game
 {
     private Player human;
     private Player computer;
+    private RulesEngine rulesEngine;
+    private int humanScore;
+    private int computerScore;
+    private int draws;
+    private static final int TOTAL_ROUNDS = 20;
 
     public Game(Player human, Player computer){
         this.human = human;
