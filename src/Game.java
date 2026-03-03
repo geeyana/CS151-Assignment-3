@@ -13,10 +13,17 @@ public class Game
     private int draws;
     private static final int TOTAL_ROUNDS = 20;
 
-    public Game(Player human, Player computer){
+    /**
+     * Creates a new Game with the players and rules engine.
+     *
+     * @param human       The human player
+     * @param computer    The computer player
+     * @param rulesEngine The rules engine used to determine round winners
+     */
+    public Game(Player human, Player computer, RulesEngine rulesEngine){
         this.human = human;
         this.computer = computer;
-        this.rulesEngine = new RulesEngine();
+        this.rulesEngine = rulesEngine;
     }
 
     /**
@@ -56,7 +63,7 @@ public class Game
      */
     public void play() {
         System.out.println("Welcome to: Rock, Paper, Scissors - CLI Version!");
-        System.out.printf("There will be %d rounds.\n", TOTAL_ROUNDS);
+        System.out.printf("There will be %d rounds.%n", TOTAL_ROUNDS);
 
         for (int round = 1; round <= TOTAL_ROUNDS; round++) {
             System.out.printf("%n---------- ROUND %02d ----------%n", round);
@@ -71,7 +78,7 @@ public class Game
     /**
      * Prints each player's score and the number of draws.
      */
-    public void printScore() {
+    private void printScore() {
         System.out.printf("%n%-10s %4d%n", "You:", humanScore);
         System.out.printf("%-10s %4d%n", "Computer:", computerScore);
         System.out.printf("%-10s %4d%n", "Draws:", draws);
@@ -80,7 +87,7 @@ public class Game
     /**
      * Displays the winner at the end of the game.
      */
-    public void printResult() {
+    private void printResult() {
         System.out.printf("%n========== GAME OVER ===========%n");
         
         if (humanScore > computerScore) {
