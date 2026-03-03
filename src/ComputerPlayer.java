@@ -6,7 +6,7 @@ import java.util.Random;
  */
 public class ComputerPlayer implements Player {
 
-    private String[] choice = {"rock", "paper", "scissors"};
+    private String[] choice = {"rock", "paper", "scissor"};
 
     @Override
     public String getChoice() {
