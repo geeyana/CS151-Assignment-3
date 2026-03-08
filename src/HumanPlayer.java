@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class HumanPlayer implements Player{
 
     private String name;
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
     /**
      * To Do: Implement the logic
@@ -40,8 +40,10 @@ public class HumanPlayer implements Player{
      *
      * @param name
      */
-    public HumanPlayer(String name){
+    public HumanPlayer(String name, Scanner scanner)
+    {
         this.name = name;
+        this.scanner = scanner; //need this so that instances have a shared scanner
     }
 
     /**
