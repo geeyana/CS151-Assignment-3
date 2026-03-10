@@ -35,7 +35,7 @@ public class TestHumanPlayer
 
     @Test
     public void testRock(){
-        provideInput("1/n");
+        provideInput("1\n");
         Scanner scanner = new Scanner(System.in);
         HumanPlayer player = new HumanPlayer("test", scanner);
         String result = player.getChoice();

@@ -19,7 +19,13 @@ public class HumanPlayer implements Player{
 
         while (true) {
             System.out.print("Choose (1=rock, 2=paper, 3=scissors): ");
-            String input = scanner.nextLine();
+
+            if (!scanner.hasNextLine()) {
+                return "";
+            }
+
+            String input = scanner.nextLine().trim();
+            input = input.replace("/n", "");
 
             if (input.equals("1")) {
                 return "rock";
