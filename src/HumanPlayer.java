@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class HumanPlayer implements Player{
 
     private String name;
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
     /**
      * To Do: Implement the logic
@@ -19,7 +19,9 @@ public class HumanPlayer implements Player{
 
         while (true) {
             System.out.print("Choose (1=rock, 2=paper, 3=scissors): ");
-            String input = scanner.nextLine();
+            String input = scanner.nextLine().trim();
+
+            input = input.replace("/n", "");
 
             if (input.equals("1")) {
                 return "rock";
@@ -42,6 +44,12 @@ public class HumanPlayer implements Player{
      */
     public HumanPlayer(String name){
         this.name = name;
+        this.scanner = new Scanner(System.in);
+    }
+
+    public HumanPlayer(String name, Scanner scanner){
+        this.name = name;
+        this.scanner = scanner;
     }
 
     /**
