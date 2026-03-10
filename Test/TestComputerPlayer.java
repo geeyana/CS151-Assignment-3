@@ -22,7 +22,7 @@ public class TestComputerPlayer
     public void testGetChoice(){
         List<String> validChoice = List.of("rock", "paper", "scissors");
 
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 200; i++){
             String result = player.getChoice();
             assertTrue(validChoice.contains(result));
         }
@@ -35,7 +35,7 @@ public class TestComputerPlayer
     public void testAllOptions(){
         Set<String> seen = new HashSet<String>();
 
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 200; i++){
             seen.add(player.getChoice());
         }
         assertTrue(seen.contains("rock"));
@@ -48,7 +48,7 @@ public class TestComputerPlayer
      */
     @Test
     public void testNullOption(){
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 200; i++){
             assertFalse(player.getChoice().isEmpty());
         }
     }
