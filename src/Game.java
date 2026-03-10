@@ -31,7 +31,6 @@ public class Game
      * Plays a round.
      * Gets choices from both players and determines a winner with rulesEngine.
      * Prints the round result and updates the score.
-     * Should be private because it is used only by play().
      */
     private void playRound(){
         String humanChoice = human.getChoice();
@@ -102,5 +101,32 @@ public class Game
             System.out.println("Game ended in a draw!!!");
         }
         System.out.println("================================");
+    }
+
+    /**
+     * Get the computer's score for testing.
+     * 
+     * @return The computer player's score.
+     */
+    public int getComputerScore() {
+        return computerScore;
+    }
+
+    /**
+     * Get the human's score for testing.
+     * 
+     * @return The human player's score.
+     */
+    public int getHumanScore() {
+        return humanScore;
+    }
+
+    /**
+     * Get the number of draws.
+     * 
+     * @return The number of draws.
+     */
+    public int getDraws() {
+        return draws;
     }
 }

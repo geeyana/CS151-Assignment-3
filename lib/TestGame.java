@@ -52,4 +52,25 @@ public class TestGame {
         game.play();
         assertTrue(output.toString().contains("Welcome to: Rock, Paper, Scissors - CLI Version!"));
     }
+
+    @Test
+    public void testComputerScoreKeeping() {
+        Game game = new Game(alwaysRock, alwaysPaper, new RulesEngine());
+        game.play();
+        assertEquals(20, game.getComputerScore());
+    }
+
+    @Test
+    public void testHumanScoreKeeping() {
+        Game game = new Game(alwaysScissors, alwaysPaper, new RulesEngine());
+        game.play();
+        assertEquals(20, game.getHumanScore());
+    }
+
+    @Test
+    public void testDrawsScoreKeeping() {
+        Game game = new Game(alwaysScissors, alwaysScissors, new RulesEngine());
+        game.play();
+        assertEquals(20, game.getDraws());
+    }
 }
