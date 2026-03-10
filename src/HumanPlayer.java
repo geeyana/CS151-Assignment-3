@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * Implements Coding To Interface Design Principle
- * @ asmita
+ * @ asmitadulla
  */
 public class HumanPlayer implements Player{
 
@@ -18,13 +18,9 @@ public class HumanPlayer implements Player{
     public String getChoice() {
 
         while (true) {
-            if (!scanner.hasNextLine()) {
-                return "";
-            }
-
+            System.out.print("Choose (1=rock, 2=paper, 3=scissors): ");
             String input = scanner.nextLine().trim();
 
-            // Handle both correct "\n" and incorrect "/n" from test case
             input = input.replace("/n", "");
 
             if (input.equals("1")) {
@@ -36,6 +32,9 @@ public class HumanPlayer implements Player{
             else if (input.equals("3")) {
                 return "scissors";
             } 
+            else {
+                System.out.println("Invalid input. Please enter 1, 2, or 3.");
+            }
         }
     }
 
