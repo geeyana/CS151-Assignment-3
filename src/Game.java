@@ -1,3 +1,4 @@
+
 /**
  * Plays a game of Rock, Paper, Scissors with a human versus a computer.
  * Design principles: cohesion, delegation
@@ -30,8 +31,9 @@ public class Game
      * Plays a round.
      * Gets choices from both players and determines a winner with rulesEngine.
      * Prints the round result and updates the score.
+     * Should be private because it is used only by play().
      */
-    public void playRound(){
+    private void playRound(){
         String humanChoice = human.getChoice();
         String computerChoice = computer.getChoice();
 

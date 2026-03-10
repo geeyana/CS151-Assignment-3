@@ -46,14 +46,10 @@ public class HumanPlayer implements Player{
      *
      * @param name
      */
-    public HumanPlayer(String name){
+    public HumanPlayer(String name, Scanner scanner)
+    {
         this.name = name;
-        this.scanner = new Scanner(System.in);
-    }
-
-    public HumanPlayer(String name, Scanner scanner){
-        this.name = name;
-        this.scanner = scanner;
+        this.scanner = scanner; //need this so that instances have a shared scanner
     }
 
     /**
