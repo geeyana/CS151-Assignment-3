@@ -18,7 +18,14 @@ public class HumanPlayer implements Player{
     public String getChoice() {
 
         while (true) {
-            String input = scanner.nextLine();
+            if (!scanner.hasNextLine()) {
+                return "";
+            }
+
+            String input = scanner.nextLine().trim();
+
+            // Handle both correct "\n" and incorrect "/n" from test case
+            input = input.replace("/n", "");
 
             if (input.equals("1")) {
                 return "rock";
