@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * Implements Coding To Interface Design Principle
- * @ asmitadulla
+ * @ asmita
  */
 public class HumanPlayer implements Player{
 
@@ -46,10 +46,14 @@ public class HumanPlayer implements Player{
      *
      * @param name
      */
-    public HumanPlayer(String name, Scanner scanner)
-    {
+    public HumanPlayer(String name){
         this.name = name;
-        this.scanner = scanner; //need this so that instances have a shared scanner
+        this.scanner = new Scanner(System.in);
+    }
+
+    public HumanPlayer(String name, Scanner scanner){
+        this.name = name;
+        this.scanner = scanner;
     }
 
     /**

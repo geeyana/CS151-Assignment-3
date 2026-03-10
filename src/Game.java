@@ -57,7 +57,7 @@ public class Game
         }
     }
 
-    /**
+    /** 
      * Runs the full game for a set number of rounds.
      * Prints the scores and number of draws for each round.
      * Prints the final game winner at the end.
@@ -90,7 +90,7 @@ public class Game
      */
     private void printResult() {
         System.out.printf("%n========== GAME OVER ===========%n");
-
+        
         if (humanScore > computerScore) {
             System.out.println("You win the game!!!");
         }
@@ -105,7 +105,7 @@ public class Game
 
     /**
      * Get the computer's score for testing.
-     *
+     * 
      * @return The computer player's score.
      */
     public int getComputerScore() {
@@ -114,7 +114,7 @@ public class Game
 
     /**
      * Get the human's score for testing.
-     *
+     * 
      * @return The human player's score.
      */
     public int getHumanScore() {
@@ -123,7 +123,7 @@ public class Game
 
     /**
      * Get the number of draws.
-     *
+     * 
      * @return The number of draws.
      */
     public int getDraws() {
