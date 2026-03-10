@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * Implements Coding To Interface Design Principle
- * @author _______
+ * @ asmita
  */
 public class HumanPlayer implements Player {
 
@@ -16,7 +16,6 @@ public class HumanPlayer implements Player {
     @Override
     public String getChoice() {
         while (true) {
-            System.out.print("Choose (1=rock, 2=paper, 3=scissors): ");
             String input = scanner.nextLine();
 
             if (input.equals("1")) return "rock";
