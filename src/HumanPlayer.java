@@ -18,7 +18,6 @@ public class HumanPlayer implements Player{
     public String getChoice() {
 
         while (true) {
-            System.out.print("Choose (1=rock, 2=paper, 3=scissors): ");
             String input = scanner.nextLine();
 
             if (input.equals("1")) {
@@ -30,9 +29,6 @@ public class HumanPlayer implements Player{
             else if (input.equals("3")) {
                 return "scissors";
             } 
-            else {
-                System.out.println("Invalid input. Please enter 1, 2, or 3.");
-            }
         }
     }
 
