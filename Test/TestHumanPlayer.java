@@ -42,6 +42,21 @@ public class TestHumanPlayer
         assertEquals("rock", result);
     }
 
+    @Test
+    public void testPaper(){
+        provideInput("2\n");
+        Scanner scanner = new Scanner (System.in);
+        HumanPlayer player = new HumanPlayer("test", scanner);
+        String result = player.getChoice();
+        assertEquals("paper", result);
+
+    @Test
+    public void testScissors(){
+        provideInput("3\n");
+        Scanner scanner = new Scanner(System.in);
+        HumanPlayer player = new HumanPlayer("test", scanner);
+        String result = player.getChoice();
+        assertEquals("scissors", result);
 
 
 }
