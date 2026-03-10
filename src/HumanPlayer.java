@@ -2,37 +2,28 @@ import java.util.Scanner;
 
 /**
  * Implements Coding To Interface Design Principle
- * @ asmitadulla
+ * @author _______
  */
-public class HumanPlayer implements Player{
+public class HumanPlayer implements Player {
 
     private String name;
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
     /**
      * To Do: Implement the logic
      * @return
      */
-    
     @Override
     public String getChoice() {
-
         while (true) {
             System.out.print("Choose (1=rock, 2=paper, 3=scissors): ");
             String input = scanner.nextLine();
 
-            if (input.equals("1")) {
-                return "rock";
-            } 
-            else if (input.equals("2")) {
-                return "paper";
-            } 
-            else if (input.equals("3")) {
-                return "scissors";
-            } 
-            else {
-                System.out.println("Invalid input. Please enter 1, 2, or 3.");
-            }
+            if (input.equals("1")) return "rock";
+            if (input.equals("2")) return "paper";
+            if (input.equals("3")) return "scissors";
+
+            System.out.println("Invalid input. Please enter 1, 2, or 3.");
         }
     }
 
@@ -40,8 +31,13 @@ public class HumanPlayer implements Player{
      *
      * @param name
      */
-    public HumanPlayer(String name){
+    public HumanPlayer(String name) {
+        this(name, new Scanner(System.in));
+    }
+
+    public HumanPlayer(String name, Scanner scanner) {
         this.name = name;
+        this.scanner = scanner;
     }
 
     /**
