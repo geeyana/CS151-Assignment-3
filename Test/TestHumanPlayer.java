@@ -49,6 +49,7 @@ public class TestHumanPlayer
         HumanPlayer player = new HumanPlayer("test", scanner);
         String result = player.getChoice();
         assertEquals("paper", result);
+    }
 
     @Test
     public void testScissors(){
@@ -57,6 +58,8 @@ public class TestHumanPlayer
         HumanPlayer player = new HumanPlayer("test", scanner);
         String result = player.getChoice();
         assertEquals("scissors", result);
+
+    }
 
 
 }
