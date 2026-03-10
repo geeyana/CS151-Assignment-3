@@ -18,6 +18,8 @@ public class HumanPlayer implements Player{
     public String getChoice() {
 
         while (true) {
+            System.out.print("Choose (1=rock, 2=paper, 3=scissors): ");
+
             if (!scanner.hasNextLine()) {
                 return "";
             }
