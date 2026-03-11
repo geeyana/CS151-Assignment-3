@@ -45,12 +45,8 @@ public class HumanPlayer implements Player{
     /**
      *
      * @param name
+     * @param scanner
      */
-    public HumanPlayer(String name){
-        this.name = name;
-        this.scanner = new Scanner(System.in);
-    }
-
     public HumanPlayer(String name, Scanner scanner){
         this.name = name;
         this.scanner = scanner;
