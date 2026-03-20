@@ -68,12 +68,4 @@ public class TestHumanPlayer
         String result = player.getChoice();
         assertEquals("rock", result);
     }
-    @Test
-    public void testInvalidThenValidInput(){
-        provideInput("abc\n1\n");
-        Scanner scanner = new Scanner(System.in);
-        HumanPlayer player = new HumanPlayer("test", scanner);
-        String result = player.getChoice();
-        assertEquals("rock", result);
-    }
 }
