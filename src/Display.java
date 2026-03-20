@@ -76,10 +76,13 @@ public class Display {
         switch (result) {
             case HUMAN:
                 System.out.println("You win the game!!!");
+                break;
             case COMPUTER:
                 System.out.println("Computer wins the game!!!");
+                break;
             case DRAW:
                 System.out.println("Game ended in a draw!!!");
+                break;
         }
 
         System.out.println("================================");
