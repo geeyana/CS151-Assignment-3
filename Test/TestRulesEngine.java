@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -25,32 +24,5 @@ public class TestRulesEngine {
         assertEquals("computer", rulesEngine.determineWinner("rock", "paper"));
         assertEquals("computer", rulesEngine.determineWinner("paper", "scissors"));
         assertEquals("computer", rulesEngine.determineWinner("scissors", "rock"));
-=======
-import static org.junit.Assert.*;
-import org.junit.*;
-import org.junit.Test;
-
-public class TestRulesEngine
-{
-    private RulesEngine rulesEngine;
-    @Before
-    public void setUp(){
-        rulesEngine = new RulesEngine();
-    }
-
-    @Test
-    public void testComputerWinner(){
-
-    }
-
-    @Test
-    public void testHumanWinner(){
-
-    }
-
-    @Test
-    public void testDraw(){
-
->>>>>>> b127f76 (Updated TestGame.java and added getters/setters for Game.java)
     }
 }
