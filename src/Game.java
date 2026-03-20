@@ -9,6 +9,7 @@ public class Game
     private Player human;
     private Player computer;
     private RulesEngine rulesEngine;
+    private Display display;
     private int humanScore;
     private int computerScore;
     private int draws;
@@ -21,10 +22,11 @@ public class Game
      * @param computer    The computer player
      * @param rulesEngine The rules engine used to determine round winners
      */
-    public Game(Player human, Player computer, RulesEngine rulesEngine){
+    public Game(Player human, Player computer, RulesEngine rulesEngine, Display display){
         this.human = human;
         this.computer = computer;
         this.rulesEngine = rulesEngine;
+        this.display = display;
     }
 
     /**
@@ -39,7 +41,7 @@ public class Game
         System.out.println("You chose: " + humanChoice);
         System.out.println("Computer chose: " + computerChoice);
 
-        String winner = rulesEngine.determineWinner(humanChoice, computerChoice); // delegation
+        String winner = rulesEngine.determineWinner(humanChoice, computerChoice);
 
         switch (winner) {
             case "human":
