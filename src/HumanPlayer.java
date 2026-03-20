@@ -25,7 +25,7 @@ public class HumanPlayer implements Player{
             }
 
             String input = scanner.nextLine().trim();
-            input = input.replace("/n", "");
+            //input = input.replace("/n", "");
 
             if (input.equals("1")) {
                 return "rock";
