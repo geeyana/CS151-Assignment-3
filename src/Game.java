@@ -1,7 +1,6 @@
 
 /**
  * Plays a game of Rock, Paper, Scissors with a human versus a computer.
- * Design principles: cohesion, delegation
  * @author Gianna (geeyana)
  */
 public class Game
@@ -9,6 +8,7 @@ public class Game
     private Player human;
     private Player computer;
     private RulesEngine rulesEngine;
+    private Display display;
     private int humanScore;
     private int computerScore;
     private int draws;
@@ -21,10 +21,11 @@ public class Game
      * @param computer    The computer player
      * @param rulesEngine The rules engine used to determine round winners
      */
-    public Game(Player human, Player computer, RulesEngine rulesEngine){
+    public Game(Player human, Player computer, RulesEngine rulesEngine, Display display){
         this.human = human;
         this.computer = computer;
         this.rulesEngine = rulesEngine;
+        this.display = display;
     }
 
     /**
@@ -32,29 +33,26 @@ public class Game
      * Gets choices from both players and determines a winner with rulesEngine.
      * Prints the round result and updates the score.
      */
-    private void playRound(){
-        String humanChoice = human.getChoice();
-        String computerChoice = computer.getChoice();
+    private void playRound() {
+        Choice humanChoice = human.getChoice();
+        Choice computerChoice = computer.getChoice();
 
-        System.out.println("You chose: " + humanChoice);
-        System.out.println("Computer chose: " + computerChoice);
-
-        String winner = rulesEngine.determineWinner(humanChoice, computerChoice); // delegation
-
+        display.printChoices(humanChoice, computerChoice);
+        
+        Result winner = rulesEngine.determineWinner(humanChoice, computerChoice);
         switch (winner) {
-            case "human":
+            case HUMAN:
                 humanScore++;
-                System.out.println("You win!");
                 break;
-            case "computer":
+            case COMPUTER:
                 computerScore++;
-                System.out.println("Computer wins!");
                 break;
-            case "draw":
+            case DRAW:
                 draws++;
-                System.out.println("It's a draw!");
                 break;
         }
+
+        display.printRoundResult(winner);
     }
 
     /** 
@@ -63,49 +61,31 @@ public class Game
      * Prints the final game winner at the end.
      */
     public void play() {
-        System.out.println("Welcome to: Rock, Paper, Scissors - CLI Version!");
-        System.out.printf("There will be %d rounds.%n", TOTAL_ROUNDS);
+        display.welcome(TOTAL_ROUNDS);
 
         for (int round = 1; round <= TOTAL_ROUNDS; round++) {
-            System.out.printf("%n---------- ROUND %02d ----------%n", round);
+            display.printRoundStart(round);
             playRound();
-            printScore();
-            System.out.println("------------------------------");
+            display.printScore(humanScore, computerScore, draws);
+            display.printRoundEnd();
         }
 
-        printResult();
-    }
-
-    /**
-     * Prints each player's score and the number of draws.
-     */
-    private void printScore() {
-        System.out.printf("%n%-10s %4d%n", "You:", humanScore);
-        System.out.printf("%-10s %4d%n", "Computer:", computerScore);
-        System.out.printf("%-10s %4d%n", "Draws:", draws);
-    }
-
-    /**
-     * Displays the winner at the end of the game.
-     */
-    private void printResult() {
-        System.out.printf("%n========== GAME OVER ===========%n");
-        
-        if (humanScore > computerScore) {
-            System.out.println("You win the game!!!");
+        Result finalWinner;
+        if (humanScore == computerScore) {
+            finalWinner = Result.DRAW;
         }
-        else if (computerScore > humanScore) {
-            System.out.println("Computer wins the game!!!");
+        else if (humanScore > computerScore) {
+            finalWinner = Result.HUMAN;
         }
         else {
-            System.out.println("Game ended in a draw!!!");
+            finalWinner = Result.COMPUTER;
         }
-        System.out.println("================================");
+
+        display.printResult(finalWinner);
     }
 
     /**
      * Get the computer's score for testing.
-     * 
      * @return The computer player's score.
      */
     public int getComputerScore() {
@@ -114,7 +94,6 @@ public class Game
 
     /**
      * Get the human's score for testing.
-     * 
      * @return The human player's score.
      */
     public int getHumanScore() {
@@ -123,7 +102,6 @@ public class Game
 
     /**
      * Get the number of draws.
-     * 
      * @return The number of draws.
      */
     public int getDraws() {
