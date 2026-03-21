@@ -3,5 +3,5 @@
  * @author SyedZain
  */
 public interface Player {
-    String getChoice();
+    Choice getChoice();
 }
