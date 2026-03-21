@@ -7,8 +7,7 @@
  *
  * @author Mahika
  */
-public class RulesEngine {
-
+public class RulesEngine implements IRulesEngine {
     /**
      * Determines the winner of a round.
      *
@@ -18,6 +17,7 @@ public class RulesEngine {
      *         "computer" if computer wins,
      *         "draw" if both choices are the same
      */
+    @Override
     public String determineWinner(String humanChoice, String computerChoice) {
 
         if (humanChoice == null || computerChoice == null) {
