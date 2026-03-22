@@ -3,6 +3,10 @@
  * Plays a game of Rock, Paper, Scissors with a human versus a computer.
  * @author Gianna (geeyana)
  */
+
+/**
+ * Modify Game.java
+ */
 public class Game
 {
     private Player human;
