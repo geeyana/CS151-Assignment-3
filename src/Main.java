@@ -7,7 +7,8 @@ public class Main
         Player cp = new ComputerPlayer();
         Player hp = new HumanPlayer("Zain", sc);
         RulesEngine re = new RulesEngine();
-        Game simulateGame = new Game(hp, cp, re);
+        Display display = new Display();
+        Game simulateGame = new Game(hp, cp, re, display);
         simulateGame.play();
         sc.close();
 

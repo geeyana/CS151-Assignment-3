@@ -10,7 +10,7 @@ public class ComputerPlayer implements Player {
     private final Random random = new Random();
 
     @Override
-    public String getChoice() {
+    public Choice getChoice() {
         Choice[] choices = Choice.values();
         int randomChoice = random.nextInt(choices.length);
         return choices[randomChoice];

@@ -15,38 +15,46 @@ public class HumanPlayer implements Player{
      */
     
     @Override
-    public String getChoice() {
+    public Choice getChoice() {
 
         while (true) {
             System.out.print("Choose (1=rock, 2=paper, 3=scissors): ");
 
             if (!scanner.hasNextLine()) {
-                return "";
+                return null;
             }
 
             String input = scanner.nextLine().trim();
-            //input = input.replace("/n", "");
+            Choice move = null;
 
             if (input.equals("1")) {
-                return "rock";
+                move = Choice.ROCK;
             } 
             else if (input.equals("2")) {
-                return "paper";
+                move = Choice.PAPER;
             } 
             else if (input.equals("3")) {
-                return "scissors";
+                move = Choice.SCISSORS;
             } 
             else {
                 System.out.println("Invalid input. Please enter 1, 2, or 3.");
+                continue;
             }
+
+            //return move.name().toLowerCase();
+            return move;
         }
     }
 
     /**
      *
      * @param name
-     * @param scanner
      */
+    public HumanPlayer(String name){
+        this.name = name;
+        this.scanner = new Scanner(System.in);
+    }
+
     public HumanPlayer(String name, Scanner scanner){
         this.name = name;
         this.scanner = scanner;
