@@ -1,45 +1,26 @@
 /**
  * RulesEngine determines the winner of a Rock-Paper-Scissors round.
  *
- * Design Principles:
- * - Cohesion: This class is only responsible for determining the winner.
- * - Encapsulation: The Game class delegates winner logic to this class.
- *
  * @author Mahika
  */
 public class RulesEngine implements IRulesEngine {
-    /**
-     * Determines the winner of a round.
-     *
-     * @param humanChoice the human player's choice
-     * @param computerChoice the computer player's choice
-     * @return "human" if human wins,
-     *         "computer" if computer wins,
-     *         "draw" if both choices are the same
-     */
-    @Override
-    public String determineWinner(String humanChoice, String computerChoice) {
 
+    @Override
+    public Result determineWinner(Choice humanChoice, Choice computerChoice) {
         if (humanChoice == null || computerChoice == null) {
             throw new IllegalArgumentException("Choices cannot be null.");
         }
 
-        String human = humanChoice.trim().toLowerCase();
-        String computer = computerChoice.trim().toLowerCase();
-
-        // Draw case
-        if (human.equals(computer)) {
-            return "draw";
+        if (humanChoice == computerChoice) {
+            return Result.DRAW;
         }
 
-        // Human winning cases
-        if ((human.equals("rock") && computer.equals("scissors")) ||
-            (human.equals("paper") && computer.equals("rock")) ||
-            (human.equals("scissors") && computer.equals("paper"))) {
-            return "human";
+        if ((humanChoice == Choice.ROCK && computerChoice == Choice.SCISSORS) ||
+            (humanChoice == Choice.PAPER && computerChoice == Choice.ROCK) ||
+            (humanChoice == Choice.SCISSORS && computerChoice == Choice.PAPER)) {
+            return Result.HUMAN;
         }
 
-        // Otherwise computer wins
-        return "computer";
+        return Result.COMPUTER;
     }
 }
