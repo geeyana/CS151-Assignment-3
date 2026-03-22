@@ -25,28 +25,35 @@ public class HumanPlayer implements Player{
             }
 
             String input = scanner.nextLine().trim();
-            //input = input.replace("/n", "");
+            Move move = null;
 
             if (input.equals("1")) {
-                return "rock";
+                move = Move.ROCK;
             } 
             else if (input.equals("2")) {
-                return "paper";
+                move = Move.PAPER;
             } 
             else if (input.equals("3")) {
-                return "scissors";
+                move = Move.SCISSORS;
             } 
             else {
                 System.out.println("Invalid input. Please enter 1, 2, or 3.");
+                continue;
             }
+
+            return move.name().toLowerCase();
         }
     }
 
     /**
      *
      * @param name
-     * @param scanner
      */
+    public HumanPlayer(String name){
+        this.name = name;
+        this.scanner = new Scanner(System.in);
+    }
+
     public HumanPlayer(String name, Scanner scanner){
         this.name = name;
         this.scanner = scanner;
