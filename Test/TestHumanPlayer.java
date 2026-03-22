@@ -38,8 +38,8 @@ public class TestHumanPlayer
         provideInput("1\n");
         Scanner scanner = new Scanner(System.in);
         HumanPlayer player = new HumanPlayer("test", scanner);
-        String result = player.getChoice();
-        assertEquals("rock", result);
+        Choice result = player.getChoice();
+        assertEquals("rock", result.toString().toLowerCase());
     }
 
     @Test
@@ -47,8 +47,8 @@ public class TestHumanPlayer
         provideInput("2\n");
         Scanner scanner = new Scanner(System.in);
         HumanPlayer player = new HumanPlayer("test", scanner);
-        String result = player.getChoice();
-        assertEquals("paper", result);
+        Choice result = player.getChoice();
+        assertEquals("paper", result.toString().toLowerCase());
     }
 
     @Test
@@ -56,8 +56,8 @@ public class TestHumanPlayer
         provideInput("3\n");
         Scanner scanner = new Scanner(System.in);
         HumanPlayer player = new HumanPlayer("test", scanner);
-        String result = player.getChoice();
-        assertEquals("scissors", result);
+        Choice result = player.getChoice();
+        assertEquals("scissors", result.toString().toLowerCase());
     }
 
     @Test
@@ -65,7 +65,7 @@ public class TestHumanPlayer
         provideInput("abc\n1\n");
         Scanner scanner = new Scanner(System.in);
         HumanPlayer player = new HumanPlayer("test", scanner);
-        String result = player.getChoice();
-        assertEquals("rock", result);
+        Choice result = player.getChoice();
+        assertEquals("rock", result.toString().toLowerCase());
     }
 }
