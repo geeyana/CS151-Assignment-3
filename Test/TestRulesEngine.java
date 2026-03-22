@@ -7,22 +7,22 @@ public class TestRulesEngine {
 
     @Test
     public void testDrawCases() {
-        assertEquals("draw", rulesEngine.determineWinner("rock", "rock"));
-        assertEquals("draw", rulesEngine.determineWinner("paper", "paper"));
-        assertEquals("draw", rulesEngine.determineWinner("scissors", "scissors"));
+        assertEquals(Result.DRAW, rulesEngine.determineWinner(Choice.ROCK, Choice.ROCK));
+        assertEquals(Result.DRAW, rulesEngine.determineWinner(Choice.PAPER, Choice.PAPER));
+        assertEquals(Result.DRAW, rulesEngine.determineWinner(Choice.SCISSORS, Choice.SCISSORS));
     }
 
     @Test
     public void testHumanWinsCases() {
-        assertEquals("human", rulesEngine.determineWinner("rock", "scissors"));
-        assertEquals("human", rulesEngine.determineWinner("paper", "rock"));
-        assertEquals("human", rulesEngine.determineWinner("scissors", "paper"));
+        assertEquals(Result.HUMAN, rulesEngine.determineWinner(Choice.ROCK, Choice.SCISSORS));
+        assertEquals(Result.HUMAN, rulesEngine.determineWinner(Choice.PAPER, Choice.ROCK));
+        assertEquals(Result.HUMAN, rulesEngine.determineWinner(Choice.SCISSORS, Choice.PAPER));
     }
 
     @Test
     public void testComputerWinsCases() {
-        assertEquals("computer", rulesEngine.determineWinner("rock", "paper"));
-        assertEquals("computer", rulesEngine.determineWinner("paper", "scissors"));
-        assertEquals("computer", rulesEngine.determineWinner("scissors", "rock"));
+        assertEquals(Result.COMPUTER, rulesEngine.determineWinner(Choice.ROCK, Choice.PAPER));
+        assertEquals(Result.COMPUTER, rulesEngine.determineWinner(Choice.PAPER, Choice.SCISSORS));
+        assertEquals(Result.COMPUTER, rulesEngine.determineWinner(Choice.SCISSORS, Choice.ROCK));
     }
 }

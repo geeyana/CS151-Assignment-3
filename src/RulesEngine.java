@@ -1,25 +1,26 @@
+/**
+ * RulesEngine determines the winner of a Rock-Paper-Scissors round.
+ *
+ * @author Mahika
+ */
 public class RulesEngine implements IRulesEngine {
 
     @Override
-    public String determineWinner(String humanChoice, String computerChoice) {
-
+    public Result determineWinner(Choice humanChoice, Choice computerChoice) {
         if (humanChoice == null || computerChoice == null) {
             throw new IllegalArgumentException("Choices cannot be null.");
         }
 
-        String human = humanChoice.trim().toLowerCase();
-        String computer = computerChoice.trim().toLowerCase();
-
-        if (human.equals(computer)) {
-            return "draw";
+        if (humanChoice == computerChoice) {
+            return Result.DRAW;
         }
 
-        if ((human.equals("rock") && computer.equals("scissors")) ||
-            (human.equals("paper") && computer.equals("rock")) ||
-            (human.equals("scissors") && computer.equals("paper"))) {
-            return "human";
+        if ((humanChoice == Choice.ROCK && computerChoice == Choice.SCISSORS) ||
+            (humanChoice == Choice.PAPER && computerChoice == Choice.ROCK) ||
+            (humanChoice == Choice.SCISSORS && computerChoice == Choice.PAPER)) {
+            return Result.HUMAN;
         }
 
-        return "computer";
+        return Result.COMPUTER;
     }
 }

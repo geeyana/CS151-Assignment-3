@@ -1,3 +1,3 @@
 public interface IRulesEngine {
-    String determineWinner(String humanChoice, String computerChoice);
+    Result determineWinner(Choice humanChoice, Choice computerChoice);
 }
