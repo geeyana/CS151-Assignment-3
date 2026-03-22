@@ -23,8 +23,8 @@ public class TestComputerPlayer
         List<String> validChoice = List.of("rock", "paper", "scissors");
 
         for(int i = 0; i < 200; i++){
-            String result = player.getChoice();
-            assertTrue(validChoice.contains(result));
+            Choice result = player.getChoice();
+            assertTrue(validChoice.contains(result.toString().toLowerCase()));
         }
     }
 
@@ -36,20 +36,12 @@ public class TestComputerPlayer
         Set<String> seen = new HashSet<String>();
 
         for(int i = 0; i < 200; i++){
-            seen.add(player.getChoice());
+            seen.add(player.getChoice().toString().toLowerCase());
         }
         assertTrue(seen.contains("rock"));
         assertTrue(seen.contains("paper"));
         assertTrue(seen.contains("scissors"));
     }
 
-    /**
-     * This is to test whether the method returns null
-     */
-    @Test
-    public void testNullOption(){
-        for(int i = 0; i < 200; i++){
-            assertFalse(player.getChoice().isEmpty());
-        }
-    }
+
 }

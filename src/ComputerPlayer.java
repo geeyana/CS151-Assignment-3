@@ -1,3 +1,4 @@
+import java.util.EnumMap;
 import java.util.Random;
 
 /**
@@ -6,14 +7,12 @@ import java.util.Random;
  */
 public class ComputerPlayer implements Player {
 
-    private String[] choice = {"rock", "paper", "scissors"};
+    private final Random random = new Random();
 
     @Override
-    public String getChoice() {
-        int min = 0;
-        int max = choice.length - 1;
-        Random random = new Random();
-        int randomNum = random.nextInt(max - min + 1) + min;
-        return choice[randomNum];
+    public Choice getChoice() {
+        Choice[] choices = Choice.values();
+        int randomChoice = random.nextInt(choices.length);
+        return choices[randomChoice];
     }
 }
