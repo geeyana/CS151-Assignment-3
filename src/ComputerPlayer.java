@@ -7,12 +7,24 @@ import java.util.Random;
  */
 public class ComputerPlayer implements Player {
 
-    private final Random random = new Random();
+   private final ChoiceAlgorithm algorithm;
+
+   public ComputerPlayer(ChoiceAlgorithm algorithm) {
+       this.algorithm = algorithm;
+   }
+
 
     @Override
     public Choice getChoice() {
-        Choice[] choices = Choice.values();
-        int randomChoice = random.nextInt(choices.length);
-        return choices[randomChoice];
+        return algorithm.makeChoice();
+    }
+
+    public void recordResult(Choice computerChoice, Choice humanChoice){
+       algorithm.recordResult(computerChoice, humanChoice);
+
+    }
+
+    public void saveData(){
+       algorithm.saveData();
     }
 }
