@@ -1,0 +1,254 @@
+
+Welcome to: Rock, Paper, Scissors - CLI Version!
+
+Choose an algorithm for your opponent:
+    (1) Random Choice
+    (2) Machine Learning
+Enter number here: 
+You chose: Machine learning
+
+There will be 20 rounds.
+
+---------- ROUND 01 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          0
+Computer:     1
+Draws:        0
+------------------------------
+
+---------- ROUND 02 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          0
+Computer:     2
+Draws:        0
+------------------------------
+
+---------- ROUND 03 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          0
+Computer:     3
+Draws:        0
+------------------------------
+
+---------- ROUND 04 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: ROCK
+
+It's a draw!
+
+You:          0
+Computer:     3
+Draws:        1
+------------------------------
+
+---------- ROUND 05 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: SCISSORS
+
+You win!
+
+You:          1
+Computer:     3
+Draws:        1
+------------------------------
+
+---------- ROUND 06 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:     4
+Draws:        1
+------------------------------
+
+---------- ROUND 07 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:     5
+Draws:        1
+------------------------------
+
+---------- ROUND 08 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:     6
+Draws:        1
+------------------------------
+
+---------- ROUND 09 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:     7
+Draws:        1
+------------------------------
+
+---------- ROUND 10 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:     8
+Draws:        1
+------------------------------
+
+---------- ROUND 11 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:     9
+Draws:        1
+------------------------------
+
+---------- ROUND 12 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    10
+Draws:        1
+------------------------------
+
+---------- ROUND 13 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    11
+Draws:        1
+------------------------------
+
+---------- ROUND 14 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    12
+Draws:        1
+------------------------------
+
+---------- ROUND 15 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    13
+Draws:        1
+------------------------------
+
+---------- ROUND 16 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    14
+Draws:        1
+------------------------------
+
+---------- ROUND 17 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    15
+Draws:        1
+------------------------------
+
+---------- ROUND 18 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    16
+Draws:        1
+------------------------------
+
+---------- ROUND 19 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    17
+Draws:        1
+------------------------------
+
+---------- ROUND 20 ----------
+Choose (1=rock, 2=paper, 3=scissors): 
+You chose: ROCK
+Computer chose: PAPER
+
+Computer wins!
+
+You:          1
+Computer:    18
+Draws:        1
+------------------------------
+
+========= GAME OVER ==========
+Computer wins the game!!!
+==============================
