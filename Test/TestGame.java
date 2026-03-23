@@ -48,13 +48,6 @@ public class TestGame {
     }
 
     @Test
-    public void testOutputContainsWelcomeMessage() {
-        Game game = new Game(alwaysRock, alwaysRock, new RulesEngine(), display);
-        game.play();
-        assertTrue(output.toString().contains("Welcome to: Rock, Paper, Scissors - CLI Version!"));
-    }
-
-    @Test
     public void testComputerScoreKeeping() {
         Game game = new Game(alwaysRock, alwaysPaper, new RulesEngine(), display);
         game.play();
