@@ -41,18 +41,15 @@ public class MLAlgorithm implements ChoiceAlgorithm {
 
     @Override
     public void recordResult(Choice computerChoice, Choice humanChoice) {
-        // If we have enough history, update the pattern map
         if (history.size() == N - 1) {
             String key = buildKey();
 
             patternMap.putIfAbsent(key, new int[3]);
             patternMap.get(key)[choiceToIndex(humanChoice)]++;
 
-            // remove oldest to maintain size
             history.removeFirst();
         }
 
-        // add latest human move
         history.add(choiceToChar(humanChoice));
     }
 
@@ -71,17 +68,28 @@ public class MLAlgorithm implements ChoiceAlgorithm {
 
     private void loadData() {
         File file = new File(FILE_NAME);
-        if (!file.exists()) return;
+        if (!file.exists()) {
+            return;
+        }
 
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine().trim();
-                if (line.isEmpty()) continue;
+                if (line.isEmpty()) {
+                    continue;
+                }
 
                 String[] parts = line.split(":");
-                String key = parts[0];
+                if (parts.length != 2) {
+                    continue;
+                }
 
+                String key = parts[0];
                 String[] nums = parts[1].split(",");
+                if (nums.length != 3) {
+                    continue;
+                }
+
                 int[] counts = new int[3];
                 counts[0] = Integer.parseInt(nums[0]);
                 counts[1] = Integer.parseInt(nums[1]);
