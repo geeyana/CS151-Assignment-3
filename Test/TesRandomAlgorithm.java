@@ -9,16 +9,15 @@ import java.util.Set;
 /**
  * Need to update it @author Zain
  */
-public class TestComputerPlayer
+public class TesRandomAlgorithm
 {
     private ComputerPlayer player;
-    //String arg;
-
+    private ChoiceAlgorithm algorithm;
 
     @Before
     public void setUp(){
-        //String arg = args.length > 0 ? args[0] : "-r";
-        player = new ComputerPlayer(ChoiceAlgorithm algorithm);
+        algorithm = FactoryChoiceAlgorithm.create("1");
+        player = new ComputerPlayer(algorithm);
     }
 
     /**
