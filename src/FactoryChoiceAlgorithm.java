@@ -1,10 +1,10 @@
 public class FactoryChoiceAlgorithm {
 
-    public static ChoiceAlgorithm create(String arg){
-        switch (arg){
-            case "-m":
+    public static ChoiceAlgorithm create(String arg) {
+        switch (arg) {
+            case "2":
                 return new MLAlgorithm();
-            case "r":
+            case "1":
             default:
                 return new RandomAlgorithm();
         }
