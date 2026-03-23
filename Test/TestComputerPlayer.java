@@ -6,13 +6,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Need to update it @author Zain
+ */
 public class TestComputerPlayer
 {
     private ComputerPlayer player;
+    //String arg;
+
 
     @Before
     public void setUp(){
-        player = new ComputerPlayer();
+        //String arg = args.length > 0 ? args[0] : "-r";
+        player = new ComputerPlayer(ChoiceAlgorithm algorithm);
     }
 
     /**
