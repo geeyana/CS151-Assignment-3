@@ -10,8 +10,9 @@ public class RandomAlgorithm implements ChoiceAlgorithm
     }
 
     @Override
-    public void recordResult(Choice computerChoice, Choice humanChoice) {}
+    public void recordResult(Choice computerChoice, Choice humanChoice) {
 
+    }
     @Override
     public void saveData() {}
 }

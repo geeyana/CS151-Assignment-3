@@ -18,8 +18,8 @@ public class Display {
      * @param computerChoice    What the computer player chose.
      */
     public void printChoices(Choice humanChoice, Choice computerChoice) {
-        System.out.printf("%nYou chose: " + humanChoice);
-        System.out.printf("%nComputer chose: " + computerChoice);
+        System.out.println("You chose: " + humanChoice);
+        System.out.println("Computer chose: " + computerChoice);
     }
 
     /**
@@ -56,13 +56,13 @@ public class Display {
     public void printRoundResult(Result result) {
         switch (result) {
             case HUMAN:
-                System.out.printf("%n%nYou win!%n"); 
+                System.out.println("You win!"); 
                 break;
             case COMPUTER: 
-                System.out.printf("%n%nComputer wins!%n"); 
+                System.out.println("Computer wins!"); 
                 break;
             case DRAW:     
-                System.out.printf("%n%nIt's a draw!%n"); 
+                System.out.println("It's a draw!"); 
                 break;
         }
     }
@@ -71,7 +71,7 @@ public class Display {
      * Prints the winner at the end of the game.
      */
     public void printResult(Result result) {
-        System.out.printf("%n========= GAME OVER ==========%n");
+        System.out.printf("%n========== GAME OVER ===========%n");
 
         switch (result) {
             case HUMAN:
@@ -85,6 +85,13 @@ public class Display {
                 break;
         }
 
-        System.out.println("==============================");
+        System.out.println("================================");
+    }
+
+    /**
+     * Prints error message if the human gives an incorrect choice.
+     */
+    public void showInvalidInput() {
+        System.out.println("Invalid choice. Please enter Rock, Paper, or Scissors.");
     }
 }
