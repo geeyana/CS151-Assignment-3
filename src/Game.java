@@ -1,14 +1,11 @@
 
 /**
  * Plays a game of Rock, Paper, Scissors with a human versus a computer.
+ * 
  * @author Gianna (geeyana)
  */
 
-/**
- * Modify Game.java
- */
-public class Game
-{
+public class Game {
     private Player human;
     private Player computer;
     private RulesEngine rulesEngine;
@@ -25,7 +22,7 @@ public class Game
      * @param computer    The computer player
      * @param rulesEngine The rules engine used to determine round winners
      */
-    public Game(Player human, Player computer, RulesEngine rulesEngine, Display display){
+    public Game(Player human, Player computer, RulesEngine rulesEngine, Display display) {
         this.human = human;
         this.computer = computer;
         this.rulesEngine = rulesEngine;
@@ -42,7 +39,7 @@ public class Game
         Choice computerChoice = computer.getChoice();
 
         display.printChoices(humanChoice, computerChoice);
-        
+
         Result winner = rulesEngine.determineWinner(humanChoice, computerChoice);
         switch (winner) {
             case HUMAN:
@@ -57,15 +54,18 @@ public class Game
         }
 
         display.printRoundResult(winner);
+        if(computer instanceof ComputerPlayer){
+            ((ComputerPlayer) computer).recordResult(computerChoice, humanChoice);
+        }
     }
 
-    /** 
+    /**
      * Runs the full game for a set number of rounds.
      * Prints the scores and number of draws for each round.
      * Prints the final game winner at the end.
      */
     public void play() {
-        display.welcome(TOTAL_ROUNDS);
+        display.showRounds(TOTAL_ROUNDS);
 
         for (int round = 1; round <= TOTAL_ROUNDS; round++) {
             display.printRoundStart(round);
@@ -77,12 +77,14 @@ public class Game
         Result finalWinner;
         if (humanScore == computerScore) {
             finalWinner = Result.DRAW;
-        }
-        else if (humanScore > computerScore) {
+        } else if (humanScore > computerScore) {
             finalWinner = Result.HUMAN;
-        }
-        else {
+        } else {
             finalWinner = Result.COMPUTER;
+        }
+
+        if(computer instanceof ComputerPlayer){
+            ((ComputerPlayer) computer).saveData();
         }
 
         display.printResult(finalWinner);
@@ -90,6 +92,7 @@ public class Game
 
     /**
      * Get the computer's score for testing.
+     * 
      * @return The computer player's score.
      */
     public int getComputerScore() {
@@ -98,6 +101,7 @@ public class Game
 
     /**
      * Get the human's score for testing.
+     * 
      * @return The human player's score.
      */
     public int getHumanScore() {
@@ -106,6 +110,7 @@ public class Game
 
     /**
      * Get the number of draws.
+     * 
      * @return The number of draws.
      */
     public int getDraws() {
