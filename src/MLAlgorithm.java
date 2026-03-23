@@ -47,10 +47,13 @@ public class MLAlgorithm implements ChoiceAlgorithm {
             patternMap.putIfAbsent(key, new int[3]);
             patternMap.get(key)[choiceToIndex(humanChoice)]++;
 
-            history.removeFirst();
+            //history.removeFirst();
         }
 
         history.add(choiceToChar(humanChoice));
+        if(history.size() > N - 1){
+            history.removeFirst();
+        }
     }
 
     @Override

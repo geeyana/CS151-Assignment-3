@@ -54,6 +54,9 @@ public class Game {
         }
 
         display.printRoundResult(winner);
+        if(computer instanceof ComputerPlayer){
+            ((ComputerPlayer) computer).recordResult(computerChoice, humanChoice);
+        }
     }
 
     /**
@@ -78,6 +81,10 @@ public class Game {
             finalWinner = Result.HUMAN;
         } else {
             finalWinner = Result.COMPUTER;
+        }
+
+        if(computer instanceof ComputerPlayer){
+            ((ComputerPlayer) computer).saveData();
         }
 
         display.printResult(finalWinner);
